@@ -5,6 +5,7 @@
 
 package lk.ijse.hibernate.util;
 
+import lk.ijse.hibernate.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -14,8 +15,15 @@ public class SessionFactoryConfiguration {
     private static SessionFactoryConfiguration sessionFactoryConfiguration;
     private SessionFactory sessionFactory;
 
+/*
+    .cofigure() method eken xml file eka sessionfactory ekata load karanava
+*/
+
     private SessionFactoryConfiguration() {
-        Configuration configuration = new Configuration();
+
+        Configuration configuration = new Configuration().configure()
+                .addAnnotatedClass(Customer.class);
+
         sessionFactory = configuration.buildSessionFactory();
 
     }
