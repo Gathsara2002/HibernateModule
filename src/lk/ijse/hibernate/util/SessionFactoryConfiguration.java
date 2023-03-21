@@ -22,8 +22,8 @@ public class SessionFactoryConfiguration {
     private SessionFactoryConfiguration() {
 
         Configuration configuration = new Configuration().configure()
-                .addAnnotatedClass(Owner.class)
-                .addAnnotatedClass(Pet.class);
+                .addAnnotatedClass(Lecture.class)
+                .addAnnotatedClass(Subject.class);
 
         sessionFactory = configuration.buildSessionFactory();
 

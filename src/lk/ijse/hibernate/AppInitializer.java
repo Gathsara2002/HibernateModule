@@ -77,7 +77,7 @@ public class AppInitializer {
         session.close();*/
 
 
-        Owner o1 = new Owner();
+       /* Owner o1 = new Owner();
         o1.setoId("O001");
         o1.setName("Gathsara");
 
@@ -119,6 +119,48 @@ public class AppInitializer {
         session.save(p3);
 
         transaction.commit();
+        session.close();*/
+
+        Lecture l1 = new Lecture();
+        l1.setId("L001");
+        l1.setName("Niroth");
+
+        Lecture l2 = new Lecture();
+        l2.setId("L002");
+        l2.setName("Prasad");
+
+        Subject s1 = new Subject();
+        s1.setId("S001");
+        s1.setName("PRF");
+
+        Subject s2 = new Subject();
+        s2.setId("S002");
+        s2.setName("OOP");
+
+        List<Subject> subList = new ArrayList<>();
+        subList.add(s1);
+        subList.add(s2);
+
+        List<Lecture> lectureList=new ArrayList<>();
+        lectureList.add(l1);
+        lectureList.add(l2);
+
+        l1.setList(subList);
+        l2.setList(subList);
+
+        s1.setList(lectureList);
+        s2.setList(lectureList);
+
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.save(s1);
+        session.save(s2);
+        session.save(l1);
+        session.save(l2);
+
+        transaction.commit();
         session.close();
+
     }
 }
