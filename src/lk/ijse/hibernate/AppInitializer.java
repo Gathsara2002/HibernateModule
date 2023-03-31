@@ -50,9 +50,6 @@ public class AppInitializer {
         Customer customer2 = session.get(Customer.class, "C001");
         System.out.println(customer);
 
-
-        Customer customer3=new Customer();
-
         transaction.commit();
         session.close();
 
@@ -76,8 +73,7 @@ public class AppInitializer {
         transaction.commit();
         session.close();*/
 
-
-       /* Owner o1 = new Owner();
+        /*Owner o1 = new Owner();
         o1.setoId("O001");
         o1.setName("Gathsara");
 
@@ -119,9 +115,10 @@ public class AppInitializer {
         session.save(p3);
 
         transaction.commit();
-        session.close();*/
+        session.close();
+*/
 
-        Lecture l1 = new Lecture();
+      /*  Lecture l1 = new Lecture();
         l1.setId("L001");
         l1.setName("Niroth");
 
@@ -158,6 +155,50 @@ public class AppInitializer {
         session.save(s2);
         session.save(l1);
         session.save(l2);
+
+        transaction.commit();
+        session.close();
+*/
+
+       /*
+       Data Fetching
+
+       Owner o1 = new Owner();
+        o1.setoId("O001");
+        o1.setName("Gathsara");
+
+        Pet p1 = new Pet();
+        p1.setPid("P001");
+        p1.setName("Ash");
+        p1.setOwner(o1);
+
+        Pet p2 = new Pet();
+        p2.setPid("P002");
+        p2.setName("Tommy");
+        p2.setOwner(o1);
+
+
+        List<Pet> list=new ArrayList<>();
+        list.add(p1);
+        list.add(p2);
+
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.save(o1);
+        session.save(p1);
+        session.save(p2);
+
+        transaction.commit();
+        session.close();*/
+
+        //Lazy Fetching (By deafult fetching in hibernate)
+
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Owner owner1 = session.get(Owner.class, "O001");
+        System.out.println(owner1.getoId()+" , "+owner1.getName());
 
         transaction.commit();
         session.close();

@@ -5,21 +5,19 @@
 
 package lk.ijse.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "owner")
 public class Owner {
+
     @Id
     @Column(name = "owner_id")
     private String oId;
     @Column(name = "owner_name")
     private String name;
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner",fetch = FetchType.LAZY)
     private List<Pet> list=new ArrayList<>();
 
     public Owner() {
