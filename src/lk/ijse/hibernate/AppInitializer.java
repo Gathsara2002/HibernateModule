@@ -192,16 +192,53 @@ public class AppInitializer {
         transaction.commit();
         session.close();*/
 
-        //Lazy Fetching (By deafult fetching in hibernate)
+     /*   //Lazy Fetching (By deafult fetching in hibernate)
 
-        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        */
+        /*Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
         Owner owner1 = session.get(Owner.class, "O001");
         System.out.println(owner1.getoId()+" , "+owner1.getName());
 
         transaction.commit();
+        session.close();*/
+        /*
+*/
+       /* //Eager Fetching
+
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Owner owner = session.get(Owner.class, "O001");
+        System.out.println(owner.getoId()+" , "+owner.getName());
+        System.out.println(owner.getList());
+
+        transaction.commit();
         session.close();
+*/
+
+       //Get Vs Load
+
+      /*  Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Owner owner = session.get(Owner.class, "O001");
+        System.out.println(owner.getoId());
+
+        Owner o002 = session.load(Owner.class, "O002");
+        System.out.println(o002.getoId());
+
+        //output --> O002
+
+        Owner owner = session.get(Owner.class, "O002");
+        System.out.println(owner.getoId());
+
+        //output --> NullPointerException
+
+
+        transaction.commit();
+        session.close();*/
 
     }
 }

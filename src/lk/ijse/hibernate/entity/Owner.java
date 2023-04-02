@@ -17,7 +17,7 @@ public class Owner {
     private String oId;
     @Column(name = "owner_name")
     private String name;
-    @OneToMany(mappedBy = "owner",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER)
     private List<Pet> list=new ArrayList<>();
 
     public Owner() {
