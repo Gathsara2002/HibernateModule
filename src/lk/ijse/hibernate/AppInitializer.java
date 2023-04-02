@@ -192,9 +192,10 @@ public class AppInitializer {
         transaction.commit();
         session.close();*/
 
-     /*   //Lazy Fetching (By deafult fetching in hibernate)
+        /*   //Lazy Fetching (By deafult fetching in hibernate)
 
-        */
+         */
+
         /*Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
@@ -203,8 +204,10 @@ public class AppInitializer {
 
         transaction.commit();
         session.close();*/
+
         /*
-*/
+         */
+
        /* //Eager Fetching
 
         Session session = SessionFactoryConfiguration.getInstance().getSession();
@@ -218,9 +221,10 @@ public class AppInitializer {
         session.close();
 */
 
-       //Get Vs Load
+      /*
+         //Get Vs Load
 
-      /*  Session session = SessionFactoryConfiguration.getInstance().getSession();
+       Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
         Owner owner = session.get(Owner.class, "O001");
@@ -239,6 +243,9 @@ public class AppInitializer {
 
         transaction.commit();
         session.close();*/
+
+        /*Test test = new Test();
+        test.setId("T001");*/
 
     }
 }
