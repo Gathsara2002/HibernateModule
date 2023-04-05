@@ -9,6 +9,7 @@ import lk.ijse.hibernate.entity.*;
 import lk.ijse.hibernate.util.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -247,5 +248,40 @@ public class AppInitializer {
         /*Test test = new Test();
         test.setId("T001");*/
 
+/*        //HQL
+
+        Session session = SessionFactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String sql="FROM owner";
+        Query query = session.createQuery(sql);
+        List<Owner> list = query.list();
+
+        for (Owner owner :list) {
+            System.out.println(owner.getList());
+        }
+
+        String hql="FROM owner WHERE name LIKE 'G%' ";
+        Query query = session.createQuery(hql);
+        List <Owner>list = query.list();
+
+        for (Owner owner:list) {
+            System.out.println(owner.getList());
+        }
+
+        String pid="P001";
+        String name="Dog";
+
+        String hql="UPDATE Pet SET name= : pet_name WHERE pid= : pet_id";
+        Query query = session.createQuery(hql);
+        query.setParameter("pet_name",name);
+        query.setParameter("pet_id",pid);
+
+        int i = query.executeUpdate();
+        System.out.println(i>0);
+
+
+        transaction.commit();
+        session.close();*/
     }
 }

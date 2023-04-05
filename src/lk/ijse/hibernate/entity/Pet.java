@@ -42,15 +42,6 @@ public class Pet {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "pid='" + pid + '\'' +
-                ", name='" + name + '\'' +
-                ", owner=" + owner +
-                '}';
-    }
-
     public Owner getOwner() {
         return owner;
     }
@@ -59,4 +50,12 @@ public class Pet {
         this.owner = owner;
     }
 
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "pid='" + pid + '\'' +
+                ", name='" + name + '\'' +
+                ", owner=" + owner +
+                '}';
+    }
 }

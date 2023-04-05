@@ -53,12 +53,4 @@ public class Owner {
         this.list = list;
     }
 
-    @Override
-    public String toString() {
-        return "Owner{" +
-                "oId='" + oId + '\'' +
-                ", name='" + name + '\'' +
-                ", list=" + list +
-                '}';
-    }
 }
